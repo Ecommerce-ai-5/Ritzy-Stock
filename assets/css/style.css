@@ -269,7 +269,7 @@ body {
 .image-contain {
   max-height: 300px;
   max-width: 300px;
-  /* width: 100%; */
+   width: 100%; 
   height: fit-content;
   /* object-fit: contain; */
   object-fit: cover;
