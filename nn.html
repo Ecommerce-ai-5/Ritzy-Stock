@@ -1,0 +1,78 @@
+<script>
+
+    function updateShippingFees() {
+        // Get the element containing the total amount
+        const totalCartAmountElement = document.getElementById('total-cart-amount');
+
+        // Extract the text content of the element
+        const totalText = totalCartAmountElement.querySelector('h5').innerText;
+
+        // Use a regular expression to extract the numerical part
+        const totalAmountString = totalText.match(/\d+/)[0];
+
+        // Convert the extracted string to an integer
+        const totalAmount = parseInt(totalAmountString, 10);
+
+        if (totalAmount < 2000) {
+            const city = document.getElementById("city").value;
+            let shippingFees = 100; // default value
+
+            if (city === "Cairo") {
+                shippingFees = 50;
+            }
+            else {
+                shippingFees = 100;
+            }
+
+            document.getElementById("shipping-fees").innerText = shippingFees + " EGP";
+            document.getElementById("shipping-fees-total").innerText = shippingFees + " EGP"; // Update summary shipping fees
+            // Store the shipping fees in localStorage
+            localStorage.setItem('shippingFees', shippingFees);
+        } else {
+            document.getElementById("shipping-fees").innerText = "free shipping";
+            document.getElementById("shipping-fees-total").innerText = "0 EGP"; // Update summary shipping fees
+            // Store the shipping fees in localStorage
+            localStorage.setItem('shippingFees', "0 EGP");
+        }
+
+        // Update the cart summary
+        updateCartSummary();
+    }
+
+    function updateShippingFees() {
+        // Get the element containing the total amount
+        const totalCartAmountElement = document.getElementById('total-cart-amount');
+
+        // Extract the text content of the element
+        const totalText = totalCartAmountElement.querySelector('h5').innerText;
+
+        // Use a regular expression to extract the numerical part
+        const totalAmountString = totalText.match(/\d+/)[0];
+
+        // Convert the extracted string to an integer
+        const totalAmount = parseInt(totalAmountString, 10);
+
+        if (totalAmount < 2000) {
+            const city = document.getElementById("city").value;
+            let shippingFees = 100; // default value
+
+            if (city === "cairo") {
+                shippingFees = 50;
+            }
+            else {
+                shippingFees = 100;
+            }
+
+            document.getElementById("shipping-fees").innerText = shippingFees + " EGP";
+            document.getElementById("shipping-fees-total").innerText = shippingFees + " EGP"; // Update summary shipping fees
+        } else {
+            document.getElementById("shipping-fees").innerText = "free shipping";
+            document.getElementById("shipping-fees-total").innerText = "0 EGP"; // Update summary shipping fees
+        }
+        // Update the cart summary
+        updateCartSummary();
+    }
+
+
+
+</script>
