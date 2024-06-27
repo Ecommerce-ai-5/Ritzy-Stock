@@ -2235,3 +2235,11 @@ select {
   opacity: 0.5;
   position: relative;
 }
+.header__bar {
+  z-index: 100;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  text-align: center;
+  background-color: black;
+  color: #ffffff;
+}
